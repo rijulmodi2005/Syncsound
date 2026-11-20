@@ -1,0 +1,31 @@
+name: Build SyncSound APK
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+      - run: ./gradlew assembleRelease --no-daemon
+      - run: |
+          mkdir -p dist
+          cp app/build/outputs/apk/release/app-release.apk dist/SyncSound.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SyncSound-apk
+          path: dist/SyncSound.apk
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: SyncSound (latest build)
+          files: dist/SyncSound.apk
