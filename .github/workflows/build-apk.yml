@@ -23,12 +23,14 @@ jobs:
         run: yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses || true
 
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 9.3.1
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Check signing key is present
+        run: ls -la syncsound.keystore
 
       - name: Build release APK
-        run: ./gradlew assembleRelease --no-daemon
+        run: gradle assembleRelease --no-daemon
 
       - name: Name the APK
         run: |
