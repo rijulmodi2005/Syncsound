@@ -1,0 +1,6 @@
+{
+  "name": "SyncSound",
+  "description": "Multi-device wireless synchronized music player transforming Android phones, tablets, and web browsers into a unified multi-speaker sound system.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
