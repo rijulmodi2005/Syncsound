@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SyncSound</string>
+    <string name="tagline">Wireless Multi-Speaker Sync Engine</string>
+    <string name="multi_speaker_disclaimer">Synchronizes stereo/mono playback across multiple independent devices over Wi-Fi or relay. Not discrete Dolby multichannel surround.</string>
+    <string name="youtube_policy_notice">Uses official YouTube IFrame Embedded Player. Audio extraction is never used; ads, background limits, and regional embed rules follow YouTube policies.</string>
+    <string name="spotify_policy_notice">Uses official Spotify OAuth PKCE &amp; Web API. Playback control and streaming require an active Spotify Premium account and authorized Client ID.</string>
+</resources>
