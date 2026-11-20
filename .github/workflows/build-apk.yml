@@ -16,7 +16,8 @@ jobs:
           java-version: 21
       - uses: android-actions/setup-android@v3
       - uses: gradle/actions/setup-gradle@v4
-      - run: ./gradlew assembleRelease --no-daemon
+      - run: chmod +x gradlew
+- run: ./gradlew assembleRelease --no-daemon
       - run: |
           mkdir -p dist
           cp app/build/outputs/apk/release/app-release.apk dist/SyncSound.apk
